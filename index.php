@@ -136,7 +136,7 @@ LOIPOGI;
 					<h3>Winners can be viewed <a href="winners/">here.</a></h3>
 				</div>
 				<div class="footer navbar-fixed-bottom" style="margin-bottom: 2em;">
-				<pre style="font-size: 1.5rem;">This system is developed & designed by: <a href="https://www.facebook.com/louis.superficial.velasco.1" target="_blank">Louis Velasco</a></pre>
+				<pre style="font-size: 1.5rem;">This system is developed & designed by: © <a href="https://www.facebook.com/louis.superficial.velasco.1" target="_blank">Louis Velasco</a> | <a href="https://github.com/loiSvelasco/raffle/blob/master/LICENSE" target="_blank">License</a></pre>
 				</div>
 			</div>
 		</div> <!-- /#content -->
