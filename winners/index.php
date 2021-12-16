@@ -94,8 +94,11 @@ LOIPOGI;
 		<script src="js/jquery-3.5.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/navbarclock.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
-  		<script type="text/javascript" charset="utf8" src="js/jquery.dataTables.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
+ 
+		<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="js/datatables.min.js"></script>
 
 		<!-- <link rel="stylesheet" href="css/style.css"> -->
     </head>
@@ -121,12 +124,12 @@ LOIPOGI;
 			<hr>
 			<div><p id="instruction">
 			
-			<table id="winnersTable" class="display">
+			<table id="winnersTable" class="display table">
 				<thead>
 					<tr>
-						<th>Winner ID</th>
+						<th>ID</th>
 						<th>Winner Name</th>
-						<th>Level</th>
+						<th>Dataset</th>
 						<th>School</th>
 						<th>Position</th>
 						<th>Action</th>
@@ -139,13 +142,13 @@ LOIPOGI;
 
 			</div>
 			
+			<!-- <br>
 			<br>
 			<br>
 			<br>
 			<br>
 			<br>
-			<br>
-			<br><br>
+			<br><br> -->
 			<div class="footer navbar-fixed-bottom" style="margin-bottom: 2em;">
 				<h4><small>Developed & Designed by: <a href="https://www.facebook.com/louis.superficial.velasco.1" target="_blank">Louis Velasco</a></small></h4>
 				</div>
@@ -158,8 +161,13 @@ LOIPOGI;
 	</body>
 	
 	<script>
-	$(document).ready( function () {
-    $('#winnersTable').DataTable();
-} );
+	$(document).ready(function() {
+		$('#winnersTable').DataTable( {
+			dom: 'Bfrtip',
+			buttons: [
+				'copy', 'csv', 'excel'
+			]
+		} );
+	} );
 	</script>
 </html>

@@ -99,9 +99,6 @@ require_once("../functions.php");
 						$("#myModal").modal({backdrop: "static"});//show modalwith winner's name
 						$('#instruction').text("Press 'S' to Start Raffle");//set new instruction to the user
 						datafromform = 'good';//datafromform has now a value
-						// RestartConfetti();
-						// InitializeConfetti();
-						// StartConfetti();
 					}
 				});
 

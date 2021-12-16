@@ -80,7 +80,7 @@ confirm($update_sec);
 $update_sdoin = query("UPDATE participants_sdoin SET status = 'invalid' WHERE name REGEXP '[[:<:]]{$namearray[$id][0]}[[:>:]]' AND position REGEXP '[[:<:]]{$namearray[$id][3]}[[:>:]]' ");
 confirm($update_sdoin);
 
-$insert_winner = query("INSERT INTO winners(win_name, win_level, win_school, win_position) VALUES('{$namearray[$id][0]}','Elementary','{$namearray[$id][2]}','{$namearray[$id][3]}')");
+$insert_winner = query("INSERT INTO winners(win_name, win_level, win_school, win_position) VALUES('{$namearray[$id][0]}','ELEMSEC','{$namearray[$id][2]}','{$namearray[$id][3]}')");
 confirm($insert_winner);
 
 // Debug Code Below
