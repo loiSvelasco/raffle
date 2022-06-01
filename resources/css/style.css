@@ -1,6 +1,6 @@
 /*==========================HEADER*/
 body {
-	/* overflow: hidden; */
+	overflow: hidden;
 }
 #clockdate{
 	float:right;
@@ -70,7 +70,7 @@ nav.navbar-inverse{
 }
 */
 .modal{ 
-	/* margin-top:300px;  */
+	margin-top:300px; 
 }
 
 .modal-body strong{ 
@@ -90,11 +90,6 @@ nav.navbar-inverse{
 	margin-top:10em;
 	text-align:center;
 }
-
-.maincontent #winnersTable{
-	margin-top:10em;
-	text-align:left !important;
-}
 .maincontent #output{
 	font-size:7em;
 	font-family: Trebuchet MS;
@@ -105,7 +100,6 @@ confetti
 */
 
 canvas {
-    margin-top: 0px !important;
 	display: block;
 	position: absolute;
 	z-index: 1;

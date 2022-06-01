@@ -42,4 +42,37 @@ function row_count($query)
 {
     return mysqli_num_rows($query);
 }
+
+function get_winners()
+{
+	$get_winners = query("SELECT * FROM winners ORDER BY win_id DESC");
+	confirm($get_winners);
+
+	while($row = fetch_array($get_winners))
+	{
+		$winnerID = $row['win_id'];
+		$name = $row['win_name'];
+		$level = $row['win_level'];
+		$raffleID = $row['win_raffle_id'];
+		$school = $row['win_school'];
+		$position = $row['win_position'];
+		
+		$winners = <<<LOIPOGI
+			<tr>
+				<td>{$winnerID}</td>
+				<td>{$name}</td>
+				<td>{$raffleID}</td>
+				<td>{$level}</td>
+				<td>{$school}</td>
+				<td>{$position}</td>
+				<td>
+					<a href="delete.php?del_winner_id={$winnerID}" class="btn btn-danger" href="#" role="button">Delete</a>
+				</td>
+			</tr>
+LOIPOGI;
+	echo $winners;
+	
+	}
+}
+
 ?>
