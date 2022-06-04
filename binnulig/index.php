@@ -10,10 +10,14 @@ if(!file_exists($f)){
 
 require_once("../functions.php");
 
-$getNumValid = query("SELECT * FROM participants_elem WHERE status = 'valid'");
+$getNumValid = query("SELECT * FROM participants_binnulig WHERE status = 'valid'");
 confirm($getNumValid);
 
-$validNos = row_count($getNumValid) - 1;
+if(row_count($getNumValid) == 0)
+	echo "<script>alert('No active participants left')</script>";
+else
+	$validNos = row_count($getNumValid) - 1;
+
 
 include('../resources/includes/header.php');
 ?>

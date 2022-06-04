@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ELEM - SDOIN Raffle Draw</title>
+        <title>SDOIN Raffle Draw</title>
 		<link href="../resources/img/favicon.ico" rel="icon" type="image">
 		<link href="../resources/css/bootstrap.min.css" rel="stylesheet">
 		<script src="../resources/js/jquery.min.js"></script>
