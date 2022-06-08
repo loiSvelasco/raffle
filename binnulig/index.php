@@ -10,10 +10,6 @@ if(row_count($getNumValid) == 0)
 	echo "<script>alert('No active participants left')</script>";
 	header("Refresh:0; url=../");
 }
-else
-{
-	$validNos = row_count($getNumValid);
-}
 
 include '../resources/includes/header.php';
 ?>
@@ -21,20 +17,35 @@ include '../resources/includes/header.php';
 		<div class="maincontent container">
 			<pre style="font-size: 4rem;">Binnulig 2022</pre>
 			<div id="output" class="page-header">PTA Raffle Draw</div>
+			<h2 id="output"></h2>
 			<div id="alert"></div>
 			<div><p id="instruction">Press <strong>'S'</strong> on your keyboard to Start Raffle</p></div>
 			<script>
 				var numvar = 0, //variable to prevent a key from pressing multiple times
 				datafromform = ''; //make sure you have this variable empty to prevent empty modal showing
 				$('body').keydown(function(e){
+
 					//starts generating number if letter 'S' key is pressed
 					if(e.keyCode == 83 && numvar == 0){
 						if(datafromform != ''){
 							$('#myModal').modal('toggle'); //closes modal if datafromform if is not empty
 						}
+
+						// get no. of valid participants
+						var validnum = 0;
+						
+						$.ajax({
+							type: 'GET',
+							url: '../valid_participants.php',
+							success: function(data) {
+								validnum = data;
+							},
+						});
+
 						//random number animator here
 						animationTimer = setInterval(function() {
-							var randnum = Math.floor(Math.random() * <?php echo $validNos ?>),  //generate random number
+							// generate no. of valid participants from previous ajax request
+							var randnum = Math.floor(Math.random() * validnum), 
 								strnum = ""+randnum+""; //convert number to string
 							if(strnum.length == 2){//compare if length of generated number is equal to 2
 								$('#output').text(''+randnum);
@@ -65,9 +76,7 @@ include '../resources/includes/header.php';
 						$("#myModal").modal({backdrop: "static"});//show modalwith winner's name
 						$('#instruction').text("Press 'S' to Start Raffle");//set new instruction to the user
 						datafromform = 'good';//datafromform has now a value
-						// RestartConfetti();
-						// InitializeConfetti();
-						// StartConfetti();
+
 					}
 				});
 
