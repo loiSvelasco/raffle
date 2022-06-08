@@ -1,13 +1,7 @@
-<?php
-$f = "visit.php";
-//generate visit.php file if not found then write 0 to the generated file
-if(!file_exists($f)){
-	touch($f);
-	$handle =  fopen($f, "w" ) ;
-	fwrite($handle,0) ;
-	fclose ($handle);
-}
+<?php 
+	require 'config.php'
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
