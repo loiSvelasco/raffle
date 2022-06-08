@@ -122,6 +122,7 @@ LOIPOGI;
 		<div class="maincontent container">
 			<div id="output" style="font-size: 5rem;">Schools Division of Ilocos Norte Raffle Draw Winners</div>
 			<hr>
+			<a href="../"><i class="btn btn-light btn-arrow-left mb-2"></i>Back</a>
 			<div><p id="instruction">
 			
 			<table id="winnersTable" class="display table">
