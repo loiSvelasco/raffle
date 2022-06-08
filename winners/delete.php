@@ -1,6 +1,6 @@
 <?php
 
-require_once("../db.php");
+require_once '../db.php';
 require_once '../functions.php';
 
 if(isset($_GET['del_winner_id']))
@@ -23,8 +23,6 @@ if(isset($_GET['del_winner_id']))
 		
 		header('Location: ../winners');
 	}
-
-	
 }
 else
 {

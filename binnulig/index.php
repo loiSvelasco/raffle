@@ -1,28 +1,22 @@
 <?php
-$f = "visit.php";
-//generate visit.php file if not found then write 0 to the generated file
-if(!file_exists($f)){
-	touch($f);
-	$handle =  fopen($f, "w" ) ;
-	fwrite($handle,0) ;
-	fclose ($handle);
-}
 
-require_once("../functions.php");
+require_once '../functions.php';
 
 $getNumValid = query("SELECT * FROM participants_binnulig WHERE status = 'valid'");
 confirm($getNumValid);
 
 if(row_count($getNumValid) == 0)
+{
 	echo "<script>alert('No active participants left')</script>";
+	header("Refresh:0; url=../");
+}
 else
+{
 	$validNos = row_count($getNumValid) - 1;
+}
 
-
-include('../resources/includes/header.php');
+include '../resources/includes/header.php';
 ?>
-
-
 		<div id="content">
 		<div class="maincontent container">
 			<pre style="font-size: 4rem;">Binnulig 2022</pre>
