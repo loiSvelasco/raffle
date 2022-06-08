@@ -43,7 +43,7 @@ LOIPOGI;
     $update_status = query("UPDATE participants_binnulig SET status = 'invalid' WHERE id = '{$winner}'");
     confirm($update_status);
 
-    $insert_winner = query("INSERT INTO winners(win_name, win_level, win_school, win_position) VALUES('{$namearray[$id][0]}','BINNULIG','{$namearray[$id][2]}','{$namearray[$id][3]}')");
+    $insert_winner = query("INSERT INTO winners(win_staff_id, win_name, win_level, win_school, win_position) VALUES('{$winner}', '{$namearray[$id][0]}','BINNULIG','{$namearray[$id][2]}','{$namearray[$id][3]}')");
     confirm($insert_winner);
 
 }
