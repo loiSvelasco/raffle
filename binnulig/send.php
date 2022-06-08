@@ -1,7 +1,8 @@
 <?php
 
-require_once("../db.php");
-require_once("../functions.php");
+require_once '../config.php';
+require_once '../db.php';
+require_once '../functions.php';
 
 $queryarray = query("SELECT * FROM participants_binnulig WHERE status = 'valid'");
 confirm($queryarray);

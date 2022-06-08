@@ -8,6 +8,7 @@ if(!file_exists($f)){
 	fclose ($handle);
 }
 
+require_once '../config.php';
 require_once("../functions.php");
 
 $getNumValid = query("SELECT * FROM participants_binnulig WHERE status = 'valid'");
