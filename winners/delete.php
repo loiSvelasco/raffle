@@ -1,46 +1,7 @@
 <?php
 
 require_once("../db.php");
-
-$connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-function query($sql)
-{
-    global $connection;
-    return mysqli_query($connection, $sql);
-}
-
-function confirm($result)
-{
-    global $connection;
-
-    if(!$result)
-    {
-        die("Query Failed: " . mysqli_error($connection));
-    }
-}
-
-function escape_string($string)
-{
-    global $connection;
-    return mysqli_real_escape_string($connection, $string);
-}
-
-function fetch_array($result)
-{
-    return mysqli_fetch_array($result);
-}
-
-function fetch_assoc($result)
-{
-    return mysqli_fetch_assoc($result);
-}
-
-function row_count($query)
-{
-    return mysqli_num_rows($query);
-}
-
+require_once '../functions.php';
 
 if(isset($_GET['del_winner_id']))
 {
@@ -51,18 +12,11 @@ if(isset($_GET['del_winner_id']))
 	
 	while($winnerRow = fetch_array($get_level))
 	{
-		if($winnerRow['win_level'] == "Elementary")
-		{
-			$level = "participants_elem";
-		}
-		else
-		{
-			$level = "participants_sec";
-		}
-
-		$raffleID = $winnerRow['win_raffle_id'];
+		$level =    'participants_' . strtolower($winnerRow['win_level']);
+		$staff = $winnerRow['win_staff_id'];
+		$raffleID = $winnerRow['win_id'];
 		
-		$update = query("UPDATE {$level} SET status = 'valid' WHERE id = '{$raffleID}'");
+		$update = query("UPDATE {$level} SET status = 'valid' WHERE id = '{$staff}'");
 		confirm($update);
 		$del = query("DELETE FROM winners WHERE win_id = '{$delete_id}'");
 		confirm($del);

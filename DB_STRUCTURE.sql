@@ -38,6 +38,7 @@ CREATE TABLE `participants` (
 
 CREATE TABLE `winners` (
   `win_id` int(11) NOT NULL,
+  `win_staff_id` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `win_name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `win_level` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `win_school` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
