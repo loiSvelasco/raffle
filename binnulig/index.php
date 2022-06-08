@@ -12,7 +12,7 @@ if(row_count($getNumValid) == 0)
 }
 else
 {
-	$validNos = row_count($getNumValid) - 1;
+	$validNos = row_count($getNumValid);
 }
 
 include '../resources/includes/header.php';

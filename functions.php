@@ -53,7 +53,7 @@ function get_winners()
 		$winnerID = $row['win_id'];
 		$name = $row['win_name'];
 		$level = $row['win_level'];
-		$raffleID = $row['win_raffle_id'];
+		// $raffleID = $row['win_raffle_id'];
 		$school = $row['win_school'];
 		$position = $row['win_position'];
 		
@@ -61,7 +61,6 @@ function get_winners()
 			<tr>
 				<td>{$winnerID}</td>
 				<td>{$name}</td>
-				<td>{$raffleID}</td>
 				<td>{$level}</td>
 				<td>{$school}</td>
 				<td>{$position}</td>

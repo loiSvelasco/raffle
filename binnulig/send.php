@@ -21,7 +21,8 @@ while($row = fetch_array($queryarray))
 
 $id = (int)$_POST['res'];
 
-echo '<pre>'; print_r($namearray); echo '</pre>';
+// echo '<pre>'; print_r($namearray[$id][0]); echo '</pre>';
+// echo '<pre>'; print_r($namearray[$id][2]); echo '</pre>';
 
 if(count($namearray) == 0)
 {
