@@ -1,80 +1,92 @@
--- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Jun 08, 2022 at 03:30 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
---
--- Database: `raffle`
---
-
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               5.7.33 - MySQL Community Server (GPL)
+-- Server OS:                    Win64
+-- HeidiSQL Version:             12.1.0.6537
 -- --------------------------------------------------------
 
---
--- Table structure for table `participants`
---
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-CREATE TABLE `participants` (
-  `id` int(11) NOT NULL,
+-- Dumping structure for table raffle.participants_all
+DROP TABLE IF EXISTS `participants_all`;
+CREATE TABLE IF NOT EXISTS `participants_all` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `district` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `school` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `position` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL
+  `status` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- --------------------------------------------------------
+-- Data exporting was unselected.
 
---
--- Table structure for table `winners`
---
+-- Dumping structure for table raffle.participants_elem
+DROP TABLE IF EXISTS `participants_elem`;
+CREATE TABLE IF NOT EXISTS `participants_elem` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `district` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `school` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
-CREATE TABLE `winners` (
-  `win_id` int(11) NOT NULL,
+-- Data exporting was unselected.
+
+-- Dumping structure for table raffle.participants_sec
+DROP TABLE IF EXISTS `participants_sec`;
+CREATE TABLE IF NOT EXISTS `participants_sec` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `district` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `school` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table raffle.participants_tests
+DROP TABLE IF EXISTS `participants_tests`;
+CREATE TABLE IF NOT EXISTS `participants_tests` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `district` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `school` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table raffle.winners
+DROP TABLE IF EXISTS `winners`;
+CREATE TABLE IF NOT EXISTS `winners` (
+  `win_id` int(11) NOT NULL AUTO_INCREMENT,
   `win_staff_id` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `win_name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `win_level` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `win_school` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `win_position` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `win_date` datetime NOT NULL DEFAULT current_timestamp()
+  `win_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`win_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Indexes for dumped tables
---
+-- Data exporting was unselected.
 
---
--- Indexes for table `participants_binnulig`
---
-ALTER TABLE `participants_binnulig`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `winners`
---
-ALTER TABLE `winners`
-  ADD PRIMARY KEY (`win_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `participants_binnulig`
---
-ALTER TABLE `participants_binnulig`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `winners`
---
-ALTER TABLE `winners`
-  MODIFY `win_id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
