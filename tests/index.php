@@ -1,8 +1,9 @@
 <?php
 
 require_once '../functions.php';
+require_once 'dataset.config.php';
 
-$getNumValid = query("SELECT * FROM participants_tests WHERE status = 'valid'");
+$getNumValid = query("SELECT * FROM " . DATASET . " WHERE status = 'valid'");
 confirm($getNumValid);
 
 // if(row_count($getNumValid) == 0)
@@ -15,8 +16,8 @@ include '../resources/includes/header.php';
 ?>
 		<div id="content">
 		<div class="maincontent container">
-			<pre style="font-size: 4rem;">Tests Raffle</pre>
-			<div id="output" class="page-header">Tests Raffle</div>
+			<pre style="font-size: 4rem;"><?= RAFFLE_LEVEL ?></pre>
+			<div id="output" class="page-header"><?= RAFFLE_TITLE ?></div>
 			<h2 id="output"></h2>
 			<div id="alert"></div>
 			<div><p id="instruction">Press <strong>'S'</strong> on your keyboard to Start Raffle</p></div>
@@ -25,6 +26,7 @@ include '../resources/includes/header.php';
 				datafromform = ''; //make sure you have this variable empty to prevent empty modal showing
 				var validnum;
 				function getValidParticipants() {
+					// debugger;
 					var validnum; // get no. of valid participants
 					$.ajax({
 							type: 'GET',

@@ -2,8 +2,9 @@
 
 require_once '../db.php';
 require_once '../functions.php';
+require_once 'dataset.config.php';
 
-$queryarray = query("SELECT * FROM participants_tests WHERE status = 'valid'");
+$queryarray = query("SELECT * FROM " . DATASET . " WHERE status = 'valid'");
 confirm($queryarray);
 
 $namearray = [];
@@ -40,10 +41,14 @@ LOIPOGI;
     $winner = $namearray[$id][4];
 
     
-    $update_status = query("UPDATE participants_tests SET status = 'invalid' WHERE id = '{$winner}'");
+    $update_status = query("UPDATE " . DATASET . " SET status = 'invalid' WHERE id = '{$winner}'");
     confirm($update_status);
 
-    $insert_winner = query("INSERT INTO winners(win_staff_id, win_name, win_level, win_school, win_position) VALUES('{$winner}', '{$namearray[$id][0]}','BINNULIG','{$namearray[$id][2]}','{$namearray[$id][3]}')");
+    $insert_winner = query(
+        "INSERT INTO 
+         winners(win_staff_id, win_name, win_level, win_school, win_position) 
+         VALUES('{$winner}', '{$namearray[$id][0]}','" . DATASET_NAME . "','{$namearray[$id][2]}','{$namearray[$id][3]}')
+        ");
     confirm($insert_winner);
 
 }
