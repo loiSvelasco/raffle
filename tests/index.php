@@ -43,8 +43,8 @@ include '../resources/includes/header.php';
 				// console.log(validnum);
 
 				if(validnum == 0) {
-					alert('No Active Participants Left.');
-					window.location.href = "../";
+					// alert('No Active Participants Left.');
+					// window.location.href = "../";
 				}
 
 				$('body').keydown(function(e){
