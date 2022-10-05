@@ -1,5 +1,5 @@
 -- --------------------------------------------------------
--- Host:                         127.0.0.1
+-- Host:                         localhost
 -- Server version:               5.7.33 - MySQL Community Server (GPL)
 -- Server OS:                    Win64
 -- HeidiSQL Version:             12.1.0.6537
@@ -14,64 +14,126 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Dumping structure for table raffle.participants_all
-DROP TABLE IF EXISTS `participants_all`;
-CREATE TABLE IF NOT EXISTS `participants_all` (
+-- Dumping structure for table raffle.participants_divisionoffice
+CREATE TABLE IF NOT EXISTS `participants_divisionoffice` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `district` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `school` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `position` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  PRIMARY KEY (`id`) USING BTREE,
+  KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- Data exporting was unselected.
 
 -- Dumping structure for table raffle.participants_elem
-DROP TABLE IF EXISTS `participants_elem`;
 CREATE TABLE IF NOT EXISTS `participants_elem` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `staff_id` int(11) NOT NULL DEFAULT '0',
   `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `district` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `school` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `position` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`) USING BTREE,
+  KEY `staff_id` (`staff_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table raffle.participants_granddraw
+CREATE TABLE IF NOT EXISTS `participants_granddraw` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `staff_id` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `district` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `school` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  KEY `staff_id` (`staff_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table raffle.participants_nonteaching
+CREATE TABLE IF NOT EXISTS `participants_nonteaching` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `staff_id` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `district` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `school` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  KEY `staff_id` (`staff_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table raffle.participants_private
+CREATE TABLE IF NOT EXISTS `participants_private` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `staff_id` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `district` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `school` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  KEY `staff_id` (`staff_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- Data exporting was unselected.
 
 -- Dumping structure for table raffle.participants_sec
-DROP TABLE IF EXISTS `participants_sec`;
 CREATE TABLE IF NOT EXISTS `participants_sec` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `staff_id` int(11) NOT NULL DEFAULT '0',
   `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `district` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `school` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `position` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`) USING BTREE,
+  KEY `staff_id` (`staff_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+-- Data exporting was unselected.
+
+-- Dumping structure for table raffle.participants_template
+CREATE TABLE IF NOT EXISTS `participants_template` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `staff_id` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `district` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `school` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  KEY `staff_id` (`staff_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- Data exporting was unselected.
 
 -- Dumping structure for table raffle.participants_tests
-DROP TABLE IF EXISTS `participants_tests`;
 CREATE TABLE IF NOT EXISTS `participants_tests` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `staff_id` int(11) NOT NULL DEFAULT '0',
   `name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `district` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `school` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `position` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  PRIMARY KEY (`id`) USING BTREE,
+  KEY `staff_id` (`staff_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
 
 -- Data exporting was unselected.
 
 -- Dumping structure for table raffle.winners
-DROP TABLE IF EXISTS `winners`;
 CREATE TABLE IF NOT EXISTS `winners` (
   `win_id` int(11) NOT NULL AUTO_INCREMENT,
   `win_staff_id` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
