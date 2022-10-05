@@ -1,6 +1,6 @@
 <?php
 
-    $online = true;
+    $online = false;
 
     if($online) 
     {
@@ -18,4 +18,8 @@
     }
 
     // $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+    include 'kint.phar';
+    Kint::$aliases[] = 'dd';
+    function dd(...$vars) { return die(Kint::dump(...$vars)); }
 ?>

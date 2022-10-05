@@ -54,6 +54,7 @@
 				</thead>
 				<tbody>
 				<?php get_winners(); ?>
+
 				</tbody>
 			</table>
 

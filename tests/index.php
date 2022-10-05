@@ -3,20 +3,11 @@
 require_once '../functions.php';
 require_once 'dataset.config.php';
 
-$getNumValid = query("SELECT * FROM " . DATASET . " WHERE status = 'valid'");
-confirm($getNumValid);
-
-// if(row_count($getNumValid) == 0)
-// {
-// 	echo "<script>alert('No active participants left')</script>";
-// 	header("Refresh:0; url=../");
-// }
-
 include '../resources/includes/header.php';
 ?>
 		<div id="content">
 		<div class="maincontent container">
-			<pre style="font-size: 4rem;"><?= RAFFLE_LEVEL ?></pre>
+			<pre style="font-size: 4rem;"><?= RAFFLE_HEADER ?></pre>
 			<div id="output" class="page-header"><?= RAFFLE_TITLE ?></div>
 			<h2 id="output"></h2>
 			<div id="alert"></div>

@@ -41,8 +41,12 @@
 				<div><p id="instruction">
 					<h3>Select which dataset to use for the raffle draw:</h3>
 					<div class="btn-group btn-group-lg" role="group" aria-label="...">
+						<a href="division/" target="_blank" type="button" class="btn btn-default">Division Office</a>
+						<a href="private/" target="_blank" type="button" class="btn btn-default">Private Schools</a>
+						<a href="nonteaching/" target="_blank" type="button" class="btn btn-default">Non-Teaching</a>
 						<a href="elem/" target="_blank" type="button" class="btn btn-default">Elementary</a>
 						<a href="sec/" target="_blank" type="button" class="btn btn-default">Secondary</a>
+						<a href="all/" target="_blank" type="button" class="btn btn-default">Grand Draw (All, Except Division Office)</a>
 						<a href="tests/" target="_blank" type="button" class="btn btn-default">Tests</a>
 					</div>
 					<h3>Winners can be viewed <a href="winners/">here.</a></h3>
