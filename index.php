@@ -48,7 +48,13 @@
 					<h3>Winners can be viewed <a href="winners/">here.</a></h3>
 				</div>
 				<div class="footer navbar-fixed-bottom" style="margin-bottom: 2em;">
-				<pre style="font-size: 1.5rem;">This system is developed & designed by: © <a href="https://www.facebook.com/louis.superficial.velasco.1" target="_blank">Louis Velasco</a> | <a href="https://github.com/loiSvelasco/raffle/blob/master/LICENSE" target="_blank">License</a></pre>
+				<!-- <pre style="font-size: 1.5rem;">This system is developed & designed by: © <a href="https://www.facebook.com/louis.superficial.velasco.1" target="_blank">Louis Velasco</a> | <a href="https://github.com/loiSvelasco/raffle/blob/master/LICENSE" target="_blank">License</a></pre> -->
+					<div style="font-size: 1.5rem;">
+						&copy;
+						<?php $fromYear = 2021; $thisYear = (int)date('Y'); echo $fromYear . (($fromYear != $thisYear) ? '-' . $thisYear : '');?>
+						This system is developed & designed by: <a href="https://loisvelasco.is-a.dev/" target="_blank">Louis 
+							Velasco</a> | <a href="https://github.com/loiSvelasco/raffle/blob/master/LICENSE" target="_blank">License</a>
+					</div>
 				</div>
 			</div>
 		</div> <!-- /#content -->	
