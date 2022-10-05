@@ -55,15 +55,6 @@ include '../resources/includes/header.php';
 							$('#myModal').modal('toggle'); //closes modal if datafromform if is not empty
 						}
 						
-						// $.ajax({
-						// 	type: 'GET',
-						// 	url: 'valid_participants.php',
-						// 	success: function(data) {
-						// 		validnum = data;
-						// 	},
-						// });
-
-						// console.log(validnum);
 						validnum = getValidParticipants();
 						//random number animator here
 						animationTimer = setInterval(function() {
@@ -86,6 +77,7 @@ include '../resources/includes/header.php';
 					if(e.keyCode == 88) {
 						numvar = 0;//numvar is put back to zero
 						clearInterval(animationTimer);//stops raffle
+						$('#queryresult').html('');
 						//Ajax POST that sends the value of 'res' variable to send.php
 						$.ajax({
 						   type: "POST",
