@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `participants_divisionoffice` (
 DELETE FROM `participants_divisionoffice`;
 INSERT INTO `participants_divisionoffice` (`id`, `staff_id`, `name`, `district`, `school`, `position`, `status`) VALUES
 	(1, 96961, 'Jenetrix Tumaneng', 'Ilocos Norte', 'Division Office', 'Education Program Supervisor - CID', 'valid'),
-	(2, 96962, 'Gene A. Reginaldo', 'Ilocos Norte', 'Division Office', 'Education Program Supervisor -CID', 'valid'),
+	(2, 96962, 'Gene A. Reginaldo', 'Ilocos Norte', 'Division Office', 'Education Program Supervisor - CID', 'valid'),
 	(3, 96963, 'Alberto P. Valencia', 'Ilocos Norte', 'Division Office', 'Administrative Aide I OSDS', 'valid'),
 	(4, 96964, 'Ma. Connie Aga', 'Ilocos Norte', 'Division Office', 'Job Order (Budget Office)', 'valid'),
 	(5, 96965, 'Kenzie Corpuz', 'Ilocos Norte', 'Division Office', 'Job Order (Driver)', 'valid'),

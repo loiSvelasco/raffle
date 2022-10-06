@@ -48,18 +48,20 @@ function get_winners()
 	$get_winners = query("SELECT * FROM winners ORDER BY win_id DESC");
 	confirm($get_winners);
 
+	$counter = 0;
+
 	while($row = fetch_array($get_winners))
 	{
+		$counter++;
 		$winnerID = $row['win_id'];
 		$name = $row['win_name'];
 		$level = $row['win_level'];
-		// $raffleID = $row['win_raffle_id'];
 		$school = $row['win_school'];
 		$position = $row['win_position'];
 		
 		$winners = <<<LOIPOGI
 			<tr>
-				<td>{$winnerID}</td>
+				<td>{$counter}</td>
 				<td>{$name}</td>
 				<td>{$level}</td>
 				<td>{$school}</td>
