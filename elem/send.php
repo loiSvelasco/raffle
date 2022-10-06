@@ -42,8 +42,11 @@ LOIPOGI;
     $winner = $namearray[$id][5];
 
     
-    $update_status = query("UPDATE " . DATASET . " SET status = 'invalid' WHERE id = '{$winner}'");
+    $update_status = query("UPDATE " . DATASET . " SET status = 'invalid' WHERE staff_id = '{$winner}'");
     confirm($update_status);
+
+    $update_gd = query("UPDATE participants_granddraw SET status = 'invalid' WHERE staff_id = '{$winner}'");
+    confirm($update_gd);
 
     $insert_winner = query(
         "INSERT INTO 

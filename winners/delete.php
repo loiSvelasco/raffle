@@ -16,8 +16,12 @@ if(isset($_GET['del_winner_id']))
 		$staff = $winnerRow['win_staff_id'];
 		$raffleID = $winnerRow['win_id'];
 		
-		$update = query("UPDATE {$level} SET status = 'valid' WHERE id = '{$staff}'");
+		$update = query("UPDATE {$level} SET status = 'valid' WHERE staff_id = '{$staff}'");
 		confirm($update);
+
+		$updategd = query("UPDATE participants_granddraw SET status = 'valid' WHERE staff_id = '{$staff}'");
+		confirm($updategd);
+
 		$del = query("DELETE FROM winners WHERE win_id = '{$delete_id}'");
 		confirm($del);
 		
